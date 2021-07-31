@@ -1,0 +1,204 @@
+:root {
+  --api-item-size: 24px;
+  --btn-border-color: rbg(166, 166, 166);
+  --google-blue: rgb(26, 115, 232);
+  --border-radius-small: 0.2rem;
+  --border-width-thin: 1px;
+  --input-padding-v: 1px;
+  --input-padding-h: 2px;
+  --input-border-width: 2px;
+  --input-font: 400 13.3333px Arial;
+  --border-radius-mid: 0.3rem;
+  --shadow-color: rgb(158, 158, 158);
+}
+
+.modal {
+  box-sizing: border-box;
+}
+.modal *,
+.modal *:before,
+.modal *:after {
+  box-sizing: inherit;
+}
+
+body > div.content {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+body > div.content > div.heading {
+  border-bottom: var(--border-width-thin) solid rgb(188, 188, 188);
+}
+
+body > div.content > div.heading #heading.warn {
+  display: inline-block;
+  color: red;
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 200ms;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#apiList {
+  width: 100%;
+  max-width: 400px;
+  border-color: var(--btn-border-color);
+}
+
+#apiList .item {
+  display: flex;
+  height: var(--api-item-size);
+  align-items: center;
+  position: relative;
+}
+
+#apiList .item .radio {
+  flex: none;
+}
+
+#apiList .item .label {
+  flex: 1;
+}
+
+#apiList .item .more {
+  background-image: url('/images/icon_more_vert.svg');
+  border-style: none;
+  align-self: stretch;
+  width: var(--api-item-size);
+}
+
+.action-button {
+  color: var(--google-blue);
+  border-radius: var(--border-radius-small);
+  border-width: var(--border-width-thin);
+  border-color: var(--btn-border-color);
+  background-color: inherit;
+  box-shadow: 1px 1px var(--btn-border-color);
+}
+
+.action-button.disabled {
+  opacity: 0.5;
+}
+
+#file-chooser-input {
+  position: absolute;
+  left: -1000rem;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* 15% from the top and centered */
+  /* border: 1px solid #888; */
+  align-self: center;
+  border-radius: var(--border-radius-mid);
+  box-shadow: 1px 1px 3px #888888;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content input {
+  padding: var(--input-padding-v) var(--input-padding-h);
+  font: var(--input-font);
+}
+
+.modal-content>*.title {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
+.modal-content>*.p {
+  width: 100%;
+  margin: 1rem 0rem;
+  padding: 0px 1rem;
+}
+
+.modal-content>*.p:not(.btn-menu)>*:not(:first-child) {
+  margin: 0.3rem 0 0 0;
+}
+
+.modal-content>*.p:not(.btn-menu)>*:not(:first-child).strut {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.modal-content>div.input input {
+  width: 100%;
+}
+
+.modal-content>div.input div.strut {
+  height: 0;
+  visibility: hidden;
+  padding: 0px calc(var(--input-border-width) + var(--input-padding-h));
+  box-sizing: content-box;
+  font: var(--input-font);
+  
+}
+
+.modal-content .btn-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal-content .btn-menu input:not(:last-child) {
+  margin: 0 0.3rem 0 0;
+}
+
+.pop-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  box-shadow: 1px 1px var(--shadow-color);
+  border-radius: var(--border-radius-small);
+  padding: 0.2rem 0.5rem;
+  z-index: 10;
+  background-color: white;
+}
+
+.pop-menu * {
+  font-size: 0.7rem;
+}

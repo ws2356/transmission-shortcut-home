@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transmission shortcut</title>
+  <link rel="stylesheet" href="css/options.css" type="text/css" />
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <div class="content">
+
+    <div class="heading">
+      <h2 id="heading"></h2>
+    </div>
+
+    <p></p>
+
+    <form id="apiList">
+      <fieldset>
+        <legend>选择/编辑Transmission daemon rpc endpoint</legend>
+        <!-- <div class="item"> -->
+        <!--   <input id="item1" class="radio" type="radio" value="api1" name="api" /> -->
+        <!--   <label class="label" for="item1">transmission daemon 1</label> -->
+        <!--   <div class="more"><div></div></div> -->
+        <!-- </div> -->
+      </fieldset>
+    </form>
+
+    <p>
+      <button id="export-button" title="export configuration to file" class="action-button" type="submit">Export</button>
+      <button id="import-button" title="load configuration from file" class="action-button" type="submit">Import</button>
+      <button id="add-button" title="Add" class="action-button" type="submit">Add</button>
+      <input type="file" id="file-chooser-input" > 
+    </p>
+
+  </div>
+
+  <!-- The Modal -->
+  <div id="modal" data-type="add" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="p title">添加Transmission daemon api</div>
+
+      <div class="p input">
+        <div> <label for="modal-api-input">输入api地址</label> </div>
+        <div> <input id="modal-api-input" class="input" type="text" placeholder="e.g. http://your.domain/transmission/rpc" > </div>
+        <div class="strut"> 输入api地址 </div>
+        <div class="strut"> e.g. http://your.domain/transmission/rpc </div>
+      </div>
+
+      <div class="p btn-menu">
+        <input class="cancel" type="submit" value="Cancel" />
+        <input class="submit" type="submit" value="Submit" />
+      </div>
+    </div>
+  </div>
+
+  <div id="pop-menu" class="pop-menu">
+    <div class="pop-menu-item delete">删除</div>
+  </div>
+
+  <script src="lib.js"></script>
+  <script src="options.js"></script>
+
+</body>
+</html>
